@@ -5,6 +5,9 @@
 int main(int argc, char **argv) {
 
     std::cout << "Number of arguments are: " << argc << '\n';
+
+    Py_Initialize();
+
     PyStatus status{};
     PyConfig config{};
     PyConfig_InitPythonConfig(&config);
