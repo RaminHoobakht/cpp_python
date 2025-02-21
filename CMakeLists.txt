@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(CMAKE_PROJECT_NAME cpp_001)
+set(CMAKE_PROJECT_NAME cpp_python)
 set(CMAKE_PROJECT_VERSION 1)
 set(CMAKE_PROJECT_VERSION_MAJOR 0)
 set(CMAKE_PROJECT_VERSION_MINOR 1)
@@ -128,7 +128,7 @@ if (PQX_LIBRARY)
 endif ()
 
 find_package(Python3 COMPONENTS Interpreter Development)
-target_link_libraries(MyProgram PRIVATE Python3::Python3)
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE Python3::Python)
 
 # Create a simple configuration header
 # configure_file(config.h.in config.h)
