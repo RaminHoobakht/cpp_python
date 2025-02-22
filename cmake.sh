@@ -18,7 +18,7 @@ else
   nice -n 20 printf '\n'
   nice -n 20 printf '%s\n' "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   nice -n 20 printf ""
-  nice -n 20 ./build/cpp_python python
+  nice -n 20 ./build/cpp_python
   nice -n 20 printf '\n'
   nice -n 20 printf '%s\n' "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 fi
