@@ -1,16 +1,10 @@
 #include <iostream>
 #include <python3.12/Python.h>
-
+#include "../header/main.hpp"
 
 int main(int argc, char **argv) {
 
-    int s{1};
-    PyObject *g{PyDict_New()};
-    PyObject *l{PyDict_New()};
-    constexpr int FEC{120};
-
-    std::cout << "Number of argument are: " << argc << '\n';
-
+    std::cout << "Number of the arguments are: " << argc << NL;
     PyStatus status{};
     PyConfig config{};
     PyConfig_InitPythonConfig(&config);
@@ -19,24 +13,19 @@ int main(int argc, char **argv) {
     if (PyStatus_Exception(status)) {
         PyConfig_Clear(&config);
         Py_ExitStatusException(status);
+        // std::cerr << "error in python configuration ..." << NL;
+        // exit(EXIT_FAILURE);
     }
 
     PyConfig_Clear(&config);
     Py_Initialize();
 
-    /* ------------------------------------------- */
-
-    PyRun_StringFlags("print('Hello Python ...')", s, g, l, NULL);
-
-
-    /* ------------------------------------------- */
-
+    PyRun_SimpleString("print('I am Python script come from C++')");
 
     if (Py_FinalizeEx() < 0) {
-        std::cerr << "error in python finalize ..." << '\n';
-        exit(FEC);
+        std::cerr << "error in python finalize ..." << NL;
+        exit(120);
     }
-
 
     std::cout << "The End ..." << std::endl;
     return EXIT_SUCCESS;
