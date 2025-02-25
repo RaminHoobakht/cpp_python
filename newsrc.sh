@@ -20,9 +20,10 @@ now="$(date +"%T")"
 
 printf '%s\n' "#include <iostream>
 #include \"../header/main.hpp\"
+#include <python3.12/Python.h>
 
 
-int main() {
+int main(int argc, char **argv) {
 
 
 
@@ -56,6 +57,10 @@ namespace util {
 } // namespace util
 
 #endif /* HEADER_MAIN_CPP */" >> src/header/main.hpp
+
+mkdir src/python
+printf '%s\n' "# python script file\n" >> src/python/main.py
+printf '%s\n' "# python log file\n" >> src/python/python.log
 
 git add --all
 git commit -m 'after creating new source file'

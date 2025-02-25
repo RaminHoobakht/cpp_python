@@ -13,9 +13,11 @@ mv src/app/main.cpp sample/main_"$file_no".cpp
 now="$(date +"%T")"
 
 printf '%s\n' "#include <iostream>
+#include \"../header/main.hpp\"
+#include <python3.12/Python.h>
 
 
-int main() {
+int main(int argc, char **argv) {
 
 
 
