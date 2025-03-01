@@ -1,46 +1,47 @@
+#include "../header/main.hpp"
 #include <iostream>
 #include <python3.12/Python.h>
 
-int main(/*int argc, char **argv*/) {
+int main(const int argc, char **argv) {
+    /* Code */
 
-    std::clog << "start init PyObject ..." << '\n';
+    if (argc < 1) {
+        std::cerr << "invalid parameter ..." << NL;
+        exit(EXIT_FAILURE);
+    }
 
-    int start{1}; // Typically, 1 indicates a single-statement mode
-    PyObject *globals = PyDict_New(); // Initialize global dictionary
-    PyObject *locals = PyDict_New(); // Initialize local dictionary
+    constexpr auto script_file_name{"src/python/main.py"};
+    constexpr auto log_file_name{"src/python/python.log"};
+    constexpr auto read_mode{"r"};
 
-    std::clog << "pass the PyObject ... " << '\n';
+    FILE *py_file{};
+    py_file = fopen(script_file_name, read_mode);
+    if (!py_file) {
+        perror("error in open file");
+        exit(EXIT_SUCCESS);
+    }
 
-    // Initialize the Python interpreter
+    PyStatus status{};
+    PyConfig config{};
+    PyConfig_InitPythonConfig(&config);
+
+    status = PyConfig_SetBytesString(&config, &config.program_name, argv[0]);
+    if (PyStatus_Exception(status)) {
+        PyConfig_Clear(&config);
+        Py_ExitStatusException(status);
+    }
+
+    PyConfig_Clear(&config);
     Py_Initialize();
 
-    // Sample Python code to be executed
-    const char *code = "print('Hello from Python...')\n"
-                       "x = 42\n"
-                       "print('The value of x is:', x)";
-
-    // Execute the Python code using PyRun_StringFlags
-    PyObject *result = PyRun_StringFlags(code, start, globals, locals, NULL);
-
-    // Check if the execution returned an error
-    if (!result) {
-        PyErr_Print(); // Print the error if any
-        std::cerr << "Error running Python code..." << std::endl;
-    } else {
-        std::clog << "Python code executed successfully..." << std::endl;
+    if (PyRun_SimpleFile(py_file, log_file_name) < 0) {
+        std::cerr << "error in run python script ..." << NL;
     }
 
-    // Clean up
-    Py_XDECREF(result);
-    Py_DECREF(globals);
-    Py_DECREF(locals);
-
-    // Finalize the Python interpreter
     if (Py_FinalizeEx() < 0) {
-        std::cerr << "Error in Python finalize..." << '\n';
-        exit(120);
+        std::cerr << "error in python finalizing ..." << NL;
     }
 
-    std::cout << "The End..." << std::endl;
+    std::cout << "\nThe End ..." << std::endl;
     return EXIT_SUCCESS;
 }
