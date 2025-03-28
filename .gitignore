@@ -35,3 +35,7 @@
 *.exe
 *.out
 *.app
+
+# Other text files
+*.txt
+*.user
