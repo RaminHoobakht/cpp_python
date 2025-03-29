@@ -31,6 +31,8 @@ int main() {
     return EXIT_SUCCESS;
 }" >> src/app/main.cpp
 
+### ----------------------------------------------
+
 printf '%s\n' "#ifndef HEADER_MAIN_CPP
 #define HEADER_MAIN_CPP
 
@@ -44,15 +46,31 @@ printf '%s\n' "#ifndef HEADER_MAIN_CPP
 #define SEP util::separator()
 
 namespace util {
+
     constexpr size_t zero{0LU};
 
-    void separator(size_t, char) noexcept;
+    /* -------------------------------------------------- */
+
+    void separator(const size_t no = 64LU, const char ch = '-') noexcept;
 
     std::string &trim(std::string &str, bool right, bool left) noexcept;
 
+    /* -------------------------------------------------- */
 
-    void separator(const size_t no = 64LU,
-                          const char ch = '-') noexcept {
+    class publicexception;
+    
+} // namespace util
+
+#endif /* HEADER_MAIN_CPP */" >> src/header/utillib.hpp
+
+### ----------------------------------------------
+
+printf '%s\n' "#include \"../header/utillib.hpp\"
+
+namespace util {
+
+
+    void separator(const size_t no, const char ch) noexcept {
         for (size_t i{zero}; i < no; ++i) {
             std::cout << ch;
         }
@@ -60,7 +78,7 @@ namespace util {
     }
 
     std::string &trim(std::string &str, const bool right,
-                             const bool left) noexcept {
+                      const bool left) noexcept {
 
         if (right) {
             while (str[0] < 33) {
@@ -98,9 +116,8 @@ namespace util {
             return this->message_.c_str();
         }
     };
-} // namespace util
 
-#endif /* HEADER_MAIN_CPP */" >> src/header/main.hpp
+} // namespace util " >> src/header/utillib.cpp
 
 git add --all
 git commit -m 'after creating new source file'
