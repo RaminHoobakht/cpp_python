@@ -17,6 +17,10 @@ printf '%s\n' "/*  */
 #include \"../header/utillib.hpp\"
 #include <iostream>
 
+#define out std::cout
+#define log std::clog
+#define err std::cerr
+
 
 int main() {
 

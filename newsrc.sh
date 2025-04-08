@@ -23,6 +23,10 @@ printf '%s\n' "/*  */
 #include \"../header/utillib.hpp\"
 #include <iostream>
 
+#define out std::cout
+#define log std::clog
+#define err std::cerr
+
 
 int main() {
 
@@ -44,6 +48,11 @@ printf '%s\n' "#ifndef HEADER_MAIN_CPP
 #define SP '\x20'
 #define LINEFEED std::cout << NL
 #define SEP util::separator()
+
+using str = std::string;
+using cstr = const std::string;
+using rstr = std::string &;
+using crstr = const std::string &;
 
 namespace util {
 

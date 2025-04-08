@@ -10,6 +10,11 @@
 #define LINEFEED std::cout << NL
 #define SEP util::separator()
 
+using str = std::string;
+using cstr = const std::string;
+using rstr = std::string &;
+using crstr = const std::string &;
+
 namespace util {
 
     constexpr size_t zero{0LU};
@@ -23,7 +28,7 @@ namespace util {
     /* -------------------------------------------------- */
 
     class publicexception;
-
+    
 } // namespace util
 
 #endif /* HEADER_MAIN_CPP */
