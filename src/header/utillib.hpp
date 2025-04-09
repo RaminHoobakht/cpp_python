@@ -1,12 +1,13 @@
 #ifndef HEADER_MAIN_CPP
 #define HEADER_MAIN_CPP
 
+#include <cstddef>
 #include <iostream>
 #include <string>
 
-static constexpr char NL{'\n'};
-static constexpr char RT{'\r'};
-static constexpr char SP{'\x20'};
+constexpr char NL{'\n'};
+constexpr char RT{'\r'};
+constexpr char SP{'\x20'};
 
 #define LF std::cout << NL
 #define SEP util::separator()
@@ -22,7 +23,7 @@ namespace util {
 
     /* -------------------------------------------------- */
 
-    void separator(const size_t no = 64LU, const char ch = '-') noexcept;
+    void separator(size_t no = 64LU, char ch = '-') noexcept;
 
     std::string &trim(std::string &str, bool right, bool left) noexcept;
 

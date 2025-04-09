@@ -26,7 +26,7 @@ int main() {
 
 
     std::cout << \"\n #($now): The End ...\" << std::endl;
-    return EXIT_SUCCESS;
+    return (EXIT_SUCCESS);
 }" >> src/app/main.cpp
 
 git add --all
