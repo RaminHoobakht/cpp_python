@@ -43,10 +43,11 @@ printf '%s\n' "#ifndef HEADER_MAIN_CPP
 #include <iostream>
 #include <string>
 
-#define NL '\n'
-#define RT '\r'
-#define SP '\x20'
-#define LINEFEED std::cout << NL
+static constexpr char NL{'\n'};
+static constexpr char RT{'\r'};
+static constexpr char SP{'\x20'};
+
+#define LF std::cout << NL
 #define SEP util::separator()
 
 using str = std::string;
