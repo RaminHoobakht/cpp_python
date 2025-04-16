@@ -10,6 +10,24 @@ namespace util {
         std::cout << NL;
     }
 
+    void lf_separator(const size_t no, const char ch) noexcept {
+        LF;
+        for (size_t i{zero}; i < no; ++i) {
+            std::cout << ch;
+        }
+        std::cout << NL;
+    }
+
+    void lf_separator_lf(const size_t no, const char ch) noexcept {
+        LF;
+        for (size_t i{zero}; i < no; ++i) {
+            std::cout << ch;
+        }
+        std::cout << NL;
+        LF;
+    }
+
+
     std::string &trim(std::string &str, const bool right,
                       const bool left) noexcept {
 
@@ -50,4 +68,4 @@ namespace util {
         }
     };
 
-} // namespace util 
+} // namespace util
