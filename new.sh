@@ -21,7 +21,7 @@ printf '%s\n' "/*  */
 int main() {
 
 
-    std::cout << \"\n #($now): The End ...\" << std::endl;
+    out << \"\n #($now): The End ...\" << end;
     return EXIT_SUCCESS;
 }" >> src/app/main.cpp
 
