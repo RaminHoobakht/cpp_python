@@ -28,7 +28,7 @@ int main() {
 
 
     std::cout << \"\n #($now): The End ...\" << std::endl;
-    return (EXIT_SUCCESS);
+    return EXIT_SUCCESS;
 }" >> src/app/main.cpp
 
 ### ----------------------------------------------
@@ -53,6 +53,7 @@ constexpr char SP{'\x20'};
 #define err                                                                    \
     std::cout << std::fixed;                                                   \
     std::cerr << SP
+#define end	std::endl    
 
 #define LF std::cout << NL
 #define SEP util::separator()
