@@ -18,10 +18,9 @@ mkdir src/header
 
 now="$(date +"%T")"
 
-printf '%s\n' "/*  */
+printf '%s\n' "/*   */
 
-#include \"../header/utillib.hpp\"
-#include <iostream>
+#include \"main.hpp\"
 
 
 int main() {
@@ -30,6 +29,15 @@ int main() {
     out << \"\n #($now): The End ...\" << end;
     return EXIT_SUCCESS;
 }" >> src/app/main.cpp
+
+### ----------------------------------------------
+
+printf '%s\n' "/*   */
+
+#include \"../header/utillib.hpp\"
+
+
+}" >> src/app/main.hpp
 
 ### ----------------------------------------------
 

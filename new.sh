@@ -12,10 +12,9 @@ mv src/app/main.cpp archive/main_"$fileno".cpp
 
 now="$(date +"%T")"
 
-printf '%s\n' "/*  */
+printf '%s\n' "/*   */
 
-#include \"../header/utillib.hpp\"
-#include <iostream>
+#include \"main.hpp\"
 
 
 int main() {
