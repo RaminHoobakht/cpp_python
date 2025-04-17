@@ -37,7 +37,7 @@ printf '%s\n' "/*   */
 #include \"../header/utillib.hpp\"
 
 
-}" >> src/app/main.hpp
+" >> src/app/main.hpp
 
 ### ----------------------------------------------
 
