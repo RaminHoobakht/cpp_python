@@ -19,6 +19,7 @@ constexpr char SP{'\x20'};
     std::cout << std::fixed;                                                   \
     std::cerr << SP
 #define end std::endl
+#define cin std::cin
 
 #define LF std::cout << NL
 #define SEP util::separator()
