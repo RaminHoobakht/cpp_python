@@ -26,7 +26,7 @@ printf '%s\n' "/*   */
 int main() {
 
 
-    out << \"\n #($now): The End ...\" << end;
+    out << \"\n #($now): The End ...\" << eln;
     return EXIT_SUCCESS;
 }" >> src/app/main.cpp
 
