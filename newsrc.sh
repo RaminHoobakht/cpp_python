@@ -35,6 +35,7 @@ int main() {
 printf '%s\n' "/*   */
 
 #include \"../header/utillib.hpp\"
+#include \"../header/cpptrain.hpp\"
 
 
 " >> src/app/main.hpp
@@ -167,6 +168,34 @@ namespace util {
     };
 
 } // namespace util " >> src/header/utillib.cpp
+
+### ----------------------------------------------
+
+printf '%s\n' "#ifndef HEADER_CPP_TRAIN_HPP
+#define HEADER_CPP_TRAIN_HPP
+
+/* declaration */
+namespace cpp {
+
+
+} // namespace cpp
+
+#endif /* HEADER_CPP_TRAIN_HPP */" >> src/header/cpptrain.hpp
+
+### ----------------------------------------------
+
+printf '%s\n' "#include \"../header/cpptrain.hpp\"
+
+/* definition */
+namespace cpp {
+
+
+
+} // namespace cpp
+
+
+" >> src/header/cpptrain.cpp
+
 
 git add --all
 git commit -m 'after creating new source file'
