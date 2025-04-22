@@ -34,8 +34,10 @@ int main() {
 
 printf '%s\n' "/*   */
 
+#pragma once
+
+#include \"../header/testmodule.hpp\"
 #include \"../header/utillib.hpp\"
-#include \"../header/cpptrain.hpp\"
 
 
 " >> src/app/main.hpp
@@ -97,7 +99,7 @@ namespace util {
 
 ### ----------------------------------------------
 
-printf '%s\n' "#include \"../header/utillib.hpp\"
+printf '%s\n' "#include \"utillib.hpp\"
 
 namespace util {
 
@@ -171,20 +173,21 @@ namespace util {
 
 ### ----------------------------------------------
 
-printf '%s\n' "#ifndef HEADER_CPP_TRAIN_HPP
-#define HEADER_CPP_TRAIN_HPP
+printf '%s\n' "#ifndef HEADER_TEST_MODULE_HPP
+#define HEADER_TEST_MODULE_HPP
 
 /* declaration */
 namespace cpp {
 
 
+
 } // namespace cpp
 
-#endif /* HEADER_CPP_TRAIN_HPP */" >> src/header/cpptrain.hpp
+#endif /* HEADER_TEST_MODULE_HPP */" >> src/header/testmodule.hpp
 
 ### ----------------------------------------------
 
-printf '%s\n' "#include \"../header/cpptrain.hpp\"
+printf '%s\n' "#include \"testmodule.hpp\"
 
 /* definition */
 namespace cpp {
@@ -194,7 +197,7 @@ namespace cpp {
 } // namespace cpp
 
 
-" >> src/header/cpptrain.cpp
+" >> src/header/testmodule.cpp
 
 
 git add --all
