@@ -12,7 +12,7 @@ mv src/app/main.cpp archive/main_"$fileno".cpp
 
 now="$(date +"%T")"
 
-printf '%s\n' "/*   */
+printf '%s\n' "/* Subject:  */
 
 #include \"main.hpp\"
 
@@ -20,7 +20,7 @@ printf '%s\n' "/*   */
 int main() {
 
 
-    out << \"\n #($now): The End ...\" << end;
+    out << \"\n #($now): The End ...\" << eln;
     return EXIT_SUCCESS;
 }" >> src/app/main.cpp
 
