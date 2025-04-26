@@ -57,7 +57,8 @@ constexpr char NL{'\n'};
 constexpr char RT{'\r'};
 constexpr char SP{'\x20'};
 
-#define out                                                                    \
+#define out
+    std::cout << std::boolalpha;                                               \
     std::cout << std::fixed;                                                   \
     std::cout << SP
 #define log                                                                    \

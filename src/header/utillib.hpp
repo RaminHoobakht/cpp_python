@@ -11,7 +11,8 @@ constexpr char NL{'\n'};
 constexpr char RT{'\r'};
 constexpr char SP{'\x20'};
 
-#define out                                                                    \
+#define out
+    std::cout << std::boolalpha;                                               \                                                                    \
     std::cout << std::fixed;                                                   \
     std::cout << SP
 #define log                                                                    \
@@ -44,10 +45,6 @@ namespace util {
     void lf_separator_lf(size_t no = 64LU, char ch = '-') noexcept;
 
     std::string &trim(std::string &str, bool right, bool left) noexcept;
-
-    template<typename T>
-    const char *data_type_name(T dt) noexcept;
-
 
     /* -------------------------------------------------- */
 
