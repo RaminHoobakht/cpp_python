@@ -12,6 +12,8 @@ constexpr char RT{'\r'};
 constexpr char SP{'\x20'};
 
 #define PI (3.141592653589793238462643383279502884197)
+#define Phi (1.61803398875)
+#define e (2.7182818284590452353602874713527)
 
 #define out                                                                    \
     std::cout << std::boolalpha;                                               \
