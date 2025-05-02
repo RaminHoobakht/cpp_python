@@ -19,6 +19,7 @@ printf '%s\n' "/* Subject:  */
 
 int main() {
 
+    LF;
 
     out << \"\n #($now): The End ...\" << eln;
     return EXIT_SUCCESS;
