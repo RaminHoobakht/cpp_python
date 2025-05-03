@@ -21,6 +21,7 @@ int main() {
 
     LF;
 
+
     out << \"\n #($now): The End ...\" << eln;
     return EXIT_SUCCESS;
 }" >> src/app/main.cpp
